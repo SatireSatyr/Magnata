@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -7,13 +8,19 @@ namespace Magnata
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    class Gameworld : Game
     {
+        private static Gameworld _instance;
+        public static Gameworld Instance { get { return _instance == null ? _instance = new Gameworld() : _instance; } }
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        List<Gameobject> gameObjects;
+
+        private Gameworld()
         {
+            gameObjects = new List<Gameobject>();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -31,6 +38,18 @@ namespace Magnata
             base.Initialize();
         }
 
+        public void Add(Gameobject go)
+        {
+            go.Load();
+            gameObjects.Add(go);
+        }
+
+        public void Remove(Gameobject go)
+        {
+            gameObjects.Remove(go);
+            go.Unload();
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -41,6 +60,7 @@ namespace Magnata
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            Other.Picture.Initialize(Content);
         }
 
         /// <summary>
