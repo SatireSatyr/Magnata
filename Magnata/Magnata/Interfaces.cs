@@ -33,4 +33,26 @@ namespace Magnata
     {
         void Add();
     }
+
+    interface ICollider
+    {
+        Gameobject Gameobject { get; }
+        bool CheckCollision(ICollider col);
+        void OnCollision(Gameobject Other);
+    }
+
+    interface ICollisionEnter
+    {
+        void OnCollisionEnter();
+    }
+
+    interface ICollisionStay
+    {
+        void OnCollisionStay();
+    }
+
+    interface ICollisionExit
+    {
+        void OnCollisionExit();
+    }
 }

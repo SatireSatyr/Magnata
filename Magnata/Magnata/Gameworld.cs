@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -49,6 +50,12 @@ namespace Magnata
             gameObjects.Remove(go);
             go.Unload();
         }
+
+        public Gameobject GetGameobject(Func<Gameobject, bool> filter)
+            => gameObjects.Find(g => filter(g));
+
+        public Gameobject[] GetGameobjects(Func<Gameobject, bool> filter)
+            => gameObjects.FindAll(g => filter(g)).ToArray();
 
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
