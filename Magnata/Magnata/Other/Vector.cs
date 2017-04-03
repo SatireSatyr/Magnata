@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magnata.Other
 {
-    class Vector
+    public class Vector
     {
         #region Operators
         public static Vector operator + (Vector lhs, Vector rhs)

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Magnata.Other
 {
-    static class Picture
+    public static class Picture
     {
         private class ImageInfo
         {

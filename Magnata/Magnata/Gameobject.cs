@@ -9,7 +9,7 @@ using Magnata.Components;
 
 namespace Magnata
 {
-    class Gameobject
+    public class Gameobject
     {
         private List<Component> components;
 

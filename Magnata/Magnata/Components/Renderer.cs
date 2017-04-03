@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Magnata.Components
 {
-    class Renderer : Component, IDrawable, ILoadable, IAddable, IRemoveable
+    public class Renderer : Component, IDrawable, ILoadable, IAddable, IRemoveable
     {
         private string _sourceTexture;
         private Texture2D _sourceTexture2D;

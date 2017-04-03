@@ -7,9 +7,16 @@ using Magnata.Other;
 
 namespace Magnata.Components
 {
-    class Transform : Component
+    public class Transform : Component
     {
-        public Vector Position;
+        private Vector _position;
+        private object key = new object();
+
+        public Vector Position
+        {
+            get { lock(key) { return _position;  } }
+            set { lock(key) { _position = value; } }
+        }
 
         public Transform(Gameobject go, Vector position) : base(go)
         {

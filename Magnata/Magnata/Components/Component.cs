@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magnata.Components
 {
-    class Component
+    public class Component
     {
         public Gameobject Gameobject { get; private set; }
         public Transform Transform { get { return Gameobject.Transform; } }

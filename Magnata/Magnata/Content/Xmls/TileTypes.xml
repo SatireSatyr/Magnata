@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+
+<head>
+  <t>
+    <buildCostMultiplier>1</buildCostMultiplier>
+    <roadCostMultiplier>1</roadCostMultiplier>
+    <MapType>Desert</MapType>
+    <MinAltitude>1</MinAltitude>
+    <MaxAltitude>11</MaxAltitude>
+    <Sprite>Desert.png</Sprite>
+  </t>
+
+  <t>
+    <buildCostMultiplier>1</buildCostMultiplier>
+    <roadCostMultiplier>1</roadCostMultiplier>
+    <MapType>Grassland</MapType>
+    <MinAltitude>1</MinAltitude>
+    <MaxAltitude>11</MaxAltitude>
+    <Sprite>Grassland.png</Sprite>
+  </t>
+
+  <t>
+    <buildCostMultiplier>2</buildCostMultiplier>
+    <roadCostMultiplier>2</roadCostMultiplier>
+    <MapType>Snow</MapType>
+    <MinAltitude>12</MinAltitude>
+    <Sprite>Snow.png</Sprite>
+  </t>
+</head>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -8,7 +9,7 @@ namespace Magnata
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    class Gameworld : Game
+    public class Gameworld : Game
     {
         private static Gameworld _instance;
         public static Gameworld Instance { get { return _instance == null ? _instance = new Gameworld() : _instance; } }
@@ -62,6 +63,12 @@ namespace Magnata
             // TODO: use this.Content to load your game content here
             Other.Picture.Initialize(Content);
         }
+
+        public Gameobject GetGameobject(Predicate<Gameobject> Filter)
+            => gameObjects.Find(Filter);
+
+        public Gameobject[] GetGameobjects(Predicate<Gameobject> Filter)
+            => gameObjects.FindAll(Filter).ToArray();
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload

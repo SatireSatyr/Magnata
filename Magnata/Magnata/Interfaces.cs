@@ -8,28 +8,28 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Magnata
 {
-    interface IUpdateable
+    public interface IUpdateable
     {
         void Update(GameTime time);
     }
 
-    interface IDrawable
+    public interface IDrawable
     {
         void Draw(SpriteBatch sb);
     }
 
-    interface ILoadable
+    public interface ILoadable
     {
         void Load();
         void Unload();
     }
 
-    interface IRemoveable
+    public interface IRemoveable
     {
         void Remove();
     }
 
-    interface IAddable
+    public interface IAddable
     {
         void Add();
     }
